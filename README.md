@@ -80,11 +80,11 @@ flowchart TB
     TideEngine[("TideEngine - Tide calculation library")]
     LightBM[("LightBM - ML prediction service (future)")]
 
-    User -->|Uses via browser| SurfScout
-    SurfScout -->|Fetches weather data| OpenMeteo
-    SurfScout -->|Fetches ocean/marine data| Stormglass
-    SurfScout -->|Performs tide calculations internally| TideEngine
-    SurfScout -->|Uses ML predictions (future)| LightBM
+    User -->|"Uses via browser"| SurfScout
+    SurfScout -->|"Fetches weather data"| OpenMeteo
+    SurfScout -->|"Fetches ocean/marine data"| Stormglass
+    SurfScout -->|"Performs tide calculations internally"| TideEngine
+    SurfScout -->|"Uses ML predictions (future)"| LightBM
 ```
 
 ### Container Diagram
