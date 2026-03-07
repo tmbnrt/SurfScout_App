@@ -34,6 +34,12 @@ SurfScout aims to close this gap by:
 - ✔️ Historic wind‑field generation from external weather APIs
 - ✔️ Angular client with map integration for data visualization
 
+## 🖼️ Screenshot Examples
+
+> ![.](SurfScout_Screen.png)
+
+> _Interpolated wind field within the analysis polygon, with the marker indicating the point where the wind‑speed time series was extracted._
+
 # 🛰️ Tech Stack
 
 ### Frontend
