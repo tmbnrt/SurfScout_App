@@ -73,7 +73,7 @@ SurfScout aims to close this gap by:
 
 ```mermaid
 flowchart TB
-    User["User - Surfer / Admin"]
+    User["User / Admin"]
     SurfScout[("surfscout.app - Overall System")]
     OpenMeteo[("OpenMeteo API")]
     Stormglass[("stormglass.io API")]
@@ -82,7 +82,7 @@ flowchart TB
 
     User -->|"Uses via browser"| SurfScout
     SurfScout -->|"Fetches weather data"| OpenMeteo
-    SurfScout -->|"Fetches ocean/marine data"| Stormglass
+    SurfScout -->|"Fetches tide data"| Stormglass
     SurfScout -->|"Performs tide calculations internally"| TideEngine
     SurfScout -->|"Uses ML predictions (future)"| LightBM
 ```
@@ -91,31 +91,31 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    User2[User - Browser]
+    User2["User - Browser"]
 
-    FE[Angular Frontend - Modules: Dashboard, Map, UserConnections, Sessionplanner, Analytics - Communication: JSON/GeoJSON]
+    FE["Angular Frontend - Modules: Dashboard, Map, UserConnections, Sessionplanner, Analytics - Communication: JSON/GeoJSON"]
 
-    BE[ASP.NET Backend - REST API - JWT Auth - NetTopologySuite - TideEngine Library]
+    BE["ASP.NET Backend - REST API - JWT Auth - NetTopologySuite - TideEngine Library"]
 
-    DB[(PostgreSQL + PostGIS)]
+    DB[("PostgreSQL + PostGIS")]
 
-    OpenMeteo2[(OpenMeteo API)]
-    Stormglass2[(stormglass.io API)]
-    LightBM2[(LightBM ML Service (future))]
+    OpenMeteo2[("OpenMeteo API")]
+    Stormglass2[("stormglass.io API")]
+    LightBM2[("LightBM ML Service (future)")]
 
-    NGINX[nginx Reverse Proxy]
+    NGINX["nginx Reverse Proxy"]
 
-    User2 -->|HTTPS| NGINX
+    User2 -->|"HTTPS"| NGINX
     NGINX --> FE
     NGINX --> BE
 
-    FE -->|REST JSON/GeoJSON| BE
-    BE -->|SQL Spatial Queries| DB
+    FE -->|"REST JSON/GeoJSON"| BE
+    BE -->|"SQL Spatial Queries"| DB
 
-    BE -->|Weather Data| OpenMeteo2
-    BE -->|Marine Data| Stormglass2
-    BE -->|Tide Calculation| BE
-    BE -->|ML Predictions (future)| LightBM2
+    BE -->|"Weather Data"| OpenMeteo2
+    BE -->|"Marine Data"| Stormglass2
+    BE -->|"Tide Calculation"| BE
+    BE -->|"ML Predictions (future)"| LightBM2
 ```
 
 ### Deployment Diagram
