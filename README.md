@@ -72,12 +72,12 @@ SurfScout aims to close this gap by:
 ```mermaid
 %% C4 LEVEL 1 – SYSTEM CONTEXT
 flowchart TB
-    User[User<br/>Surfer / Admin]
-    SurfScout[(surfscout.app<br/>Overall System)]
+    User[User - Surfer / Admin]
+    SurfScout[(surfscout.app - Overall System)]
     OpenMeteo[(OpenMeteo API)]
     Stormglass[(stormglass.io API)]
-    TideEngine[(TideEngine<br/>Tide calculation library)]
-    LightBM[(LightBM<br/>ML prediction service<br/>(future))]
+    TideEngine[(TideEngine - Tide calculation library)]
+    LightBM[(LightBM - ML prediction service (future))]
 
     User -->|Uses via browser| SurfScout
     SurfScout -->|Fetches weather data| OpenMeteo
@@ -89,17 +89,17 @@ flowchart TB
 
 %% C4 LEVEL 2 – CONTAINER DIAGRAM
 flowchart LR
-    User2[User<br/>Browser]
+    User2[User - Browser]
 
-    FE[Angular Frontend<br/>Modules:<br/>Dashboard, Map, UserConnections, Sessionplanner, Analytics<br/>Communication: JSON / GeoJSON]
+    FE[Angular Frontend - Modules: Dashboard, Map, UserConnections, Sessionplanner, Analytics - Communication: JSON/GeoJSON]
 
-    BE[ASP.NET Backend<br/>REST API<br/>JWT Auth<br/>NetTopologySuite<br/>TideEngine Library]
+    BE[ASP.NET Backend - REST API - JWT Auth - NetTopologySuite - TideEngine Library]
 
     DB[(PostgreSQL + PostGIS)]
 
     OpenMeteo2[(OpenMeteo API)]
     Stormglass2[(stormglass.io API)]
-    LightBM2[(LightBM ML Service<br/>(future))]
+    LightBM2[(LightBM ML Service (future))]
 
     NGINX[nginx Reverse Proxy]
 
@@ -107,8 +107,8 @@ flowchart LR
     NGINX --> FE
     NGINX --> BE
 
-    FE -->|REST (JSON/GeoJSON)| BE
-    BE -->|SQL / Spatial Queries| DB
+    FE -->|REST JSON/GeoJSON| BE
+    BE -->|SQL Spatial Queries| DB
 
     BE -->|Weather Data| OpenMeteo2
     BE -->|Marine Data| Stormglass2
@@ -124,15 +124,15 @@ flowchart TB
         subgraph DockerHost[Docker Host]
 
             subgraph Proxy[nginx Container]
-                NGINX2[nginx<br/>TLS termination<br/>Routing]
+                NGINX2[nginx - TLS termination - Routing]
             end
 
             subgraph FrontendC[Frontend Container]
-                FE2[Angular build<br/>served as static files]
+                FE2[Angular build - served as static files]
             end
 
             subgraph BackendC[Backend Container]
-                BE2[ASP.NET Backend<br/>REST API<br/>TideEngine Library]
+                BE2[ASP.NET Backend - REST API - TideEngine Library]
             end
 
             subgraph DBC[PostgreSQL Container]
