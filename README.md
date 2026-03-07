@@ -69,8 +69,9 @@ SurfScout aims to close this gap by:
 
 # 🧱 System Architecture
 
+### System Context Diagram
+
 ```mermaid
-%% C4 LEVEL 1 – SYSTEM CONTEXT
 flowchart TB
     User[User - Surfer / Admin]
     SurfScout[(surfscout.app - Overall System)]
@@ -84,10 +85,11 @@ flowchart TB
     SurfScout -->|Fetches ocean/marine data| Stormglass
     SurfScout -->|Performs tide calculations internally| TideEngine
     SurfScout -->|Uses ML predictions (future)| LightBM
+```
 
----
+### Container Diagram
 
-%% C4 LEVEL 2 – CONTAINER DIAGRAM
+```mermaid
 flowchart LR
     User2[User - Browser]
 
@@ -114,10 +116,11 @@ flowchart LR
     BE -->|Marine Data| Stormglass2
     BE -->|Tide Calculation| BE
     BE -->|ML Predictions (future)| LightBM2
+```
 
----
+### Deployment Diagram
 
-%% DEPLOYMENT DIAGRAM
+```mermaid
 flowchart TB
 
     subgraph Webdock[Webdock VPS]
