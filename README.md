@@ -73,12 +73,12 @@ SurfScout aims to close this gap by:
 
 ```mermaid
 flowchart TB
-    User[User - Surfer / Admin]
-    SurfScout[(surfscout.app - Overall System)]
-    OpenMeteo[(OpenMeteo API)]
-    Stormglass[(stormglass.io API)]
-    TideEngine[(TideEngine - Tide calculation library)]
-    LightBM[(LightBM - ML prediction service (future))]
+    User["User - Surfer / Admin"]
+    SurfScout[("surfscout.app - Overall System")]
+    OpenMeteo[("OpenMeteo API")]
+    Stormglass[("stormglass.io API")]
+    TideEngine[("TideEngine - Tide calculation library")]
+    LightBM[("LightBM - ML prediction service (future)")]
 
     User -->|Uses via browser| SurfScout
     SurfScout -->|Fetches weather data| OpenMeteo
