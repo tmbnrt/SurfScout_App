@@ -123,36 +123,36 @@ flowchart LR
 ```mermaid
 flowchart TB
 
-    subgraph Webdock[Webdock VPS]
-        subgraph DockerHost[Docker Host]
+    subgraph Webdock["Webdock VPS"]
+        subgraph DockerHost["Docker Host"]
 
-            subgraph Proxy[nginx Container]
-                NGINX2[nginx - TLS termination - Routing]
+            subgraph Proxy["nginx Container"]
+                NGINX2["nginx - TLS termination - Routing"]
             end
 
-            subgraph FrontendC[Frontend Container]
-                FE2[Angular build - served as static files]
+            subgraph FrontendC["Frontend Container"]
+                FE2["Angular build - served as static files"]
             end
 
-            subgraph BackendC[Backend Container]
-                BE2[ASP.NET Backend - REST API - TideEngine Library]
+            subgraph BackendC["Backend Container"]
+                BE2["ASP.NET Backend - REST API - TideEngine Library"]
             end
 
-            subgraph DBC[PostgreSQL Container]
-                DB2[(PostgreSQL + PostGIS)]
+            subgraph DBC["PostgreSQL Container"]
+                DB2[("PostgreSQL + PostGIS")]
             end
 
-            subgraph MLC[LightBM Container (future)]
-                LightBM3[Python ML service]
+            subgraph MLC["LightBM Container (future)"]
+                LightBM3["Python ML service"]
             end
 
         end
     end
 
-    OpenMeteo3[(OpenMeteo API)]
-    Stormglass3[(stormglass.io API)]
+    OpenMeteo3[("OpenMeteo API")]
+    Stormglass3[("stormglass.io API")]
 
-    User3[User Browser] -->|HTTPS| NGINX2
+    User3["User Browser"] -->|"HTTPS"| NGINX2
     NGINX2 --> FE2
     NGINX2 --> BE2
 
@@ -160,3 +160,4 @@ flowchart TB
     BE2 --> OpenMeteo3
     BE2 --> Stormglass3
     BE2 --> LightBM3
+```
