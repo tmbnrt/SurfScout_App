@@ -78,13 +78,13 @@ flowchart TB
     OpenMeteo[("OpenMeteo API")]
     Stormglass[("stormglass.io API")]
     TideEngine[("TideEngine - Tide calculation library")]
-    LightBM[("LightBM - ML prediction service (future)")]
+    LightGBM[("LightGBM - ML prediction service")]
 
     User -->|"Uses via browser"| SurfScout
     SurfScout -->|"Fetches weather data"| OpenMeteo
     SurfScout -->|"Fetches tide data"| Stormglass
     SurfScout -->|"Performs tide calculations internally"| TideEngine
-    SurfScout -->|"Uses ML predictions"| LightBM
+    SurfScout -->|"Uses ML predictions"| LightGBM
 ```
 
 ### Container Diagram
