@@ -84,7 +84,7 @@ flowchart TB
     SurfScout -->|"Fetches weather data"| OpenMeteo
     SurfScout -->|"Fetches tide data"| Stormglass
     SurfScout -->|"Performs tide calculations internally"| TideEngine
-    SurfScout -->|"Uses ML predictions (future)"| LightBM
+    SurfScout -->|"Uses ML predictions"| LightBM
 ```
 
 ### Container Diagram
@@ -93,7 +93,7 @@ flowchart TB
 flowchart LR
     User2["User - Browser"]
 
-    FE["Angular Frontend - Modules: Dashboard, Map, UserConnections, Sessionplanner, Analytics - Communication: JSON/GeoJSON"]
+    FE["Angular Frontend - Modules: Dashboard, Map, UserConnections, Analytics - Communication: JSON/GeoJSON"]
 
     BE["ASP.NET Backend - REST API - JWT Auth - NetTopologySuite - TideEngine Library"]
 
@@ -101,7 +101,7 @@ flowchart LR
 
     OpenMeteo2[("OpenMeteo API")]
     Stormglass2[("stormglass.io API")]
-    LightBM2[("LightBM ML Service (future)")]
+    LightBM2[("LightGBM ML Service")]
 
     NGINX["nginx Reverse Proxy"]
 
@@ -142,7 +142,7 @@ flowchart TB
                 DB2[("PostgreSQL + PostGIS")]
             end
 
-            subgraph MLC["LightBM Container (future)"]
+            subgraph MLC["LightGBM Container"]
                 LightBM3["Python ML service"]
             end
 
