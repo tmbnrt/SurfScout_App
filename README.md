@@ -127,11 +127,11 @@ flowchart TB
         subgraph DockerHost["Docker Host"]
 
             subgraph Proxy["nginx Container"]
-                NGINX2["nginx - TLS termination - Routing"]
+                NGINX2["nginx - Routing"]
             end
 
             subgraph FrontendC["Frontend Container"]
-                FE2["Angular build - served as static files"]
+                FE2["Angular build - static files"]
             end
 
             subgraph BackendC["Backend Container"]
