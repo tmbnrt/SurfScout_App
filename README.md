@@ -37,7 +37,7 @@ SurfScout aims to close this gap by:
 
 > ![.](SurfScout_Screen.png)
 
-> _Interpolated wind field within the analysis polygon, with the marker indicating the point where the wind‑speed time series was extracted._
+> _Historic wind field within an analysis polygon, and marker-based ratings for current spot locations._
 
 # 🛰️ Tech Stack
 
