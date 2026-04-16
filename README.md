@@ -25,9 +25,8 @@ SurfScout aims to close this gap by:
 
 ## 🚀 Current Features
 
-- ✔️ User registration & JWT‑based authentication  
+- ✔️ User registration & Cookie‑based authentication  
 - ✔️ Secure password hashing (BCrypt.Net)  
-- ✔️ Protected API endpoints using `[Authorize]`  
 - ✔️ RESTful API for users, surf sessions, spots and wind field data
 - ✔️ PostgreSQL/PostGIS integration via Entity Framework Core
 - ✔️ Integration of marine & weather APIs (Stormglass.io, Open‑Meteo)
@@ -49,6 +48,7 @@ SurfScout aims to close this gap by:
 
 ### Backend
 - ASP.NET Core
+- Entity Framework Core
 - REST API
 - JWT Authentication
 - NetTopologySuite (geospatial processing)
@@ -63,9 +63,9 @@ SurfScout aims to close this gap by:
 - Open‑Meteo
 
 ### Infrastructure
-- Docker & Docker Compose
+- Docker containerization
 - nginx reverse proxy
-- Hosted on Webdock VPS
+- Hosted on VPS infrastructure
 
 # 🧱 System Architecture
 
