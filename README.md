@@ -35,9 +35,17 @@ SurfScout aims to close this gap by:
 
 ## 🖼️ Screenshot Examples
 
-> ![.](SurfScout_Screen.png)
+> ![.](SurfScout_1.jpg)
 
-> _Historic wind field within an analysis polygon, and marker-based ratings for current spot locations._
+> _Automatically generated wind fetch polygon and calculated spot exposure as soon as the user defines a new location._
+
+> ![.](SurfScout_2.jpg)
+
+> _Historic temporal wind field for a specific surf session illustrating the wind strength over time._
+
+> ![.](SurfScout_3.jpg)
+
+> _Decision support: actual rating for all locations at a specific time considering user preferences._
 
 # 🛰️ Tech Stack
 
